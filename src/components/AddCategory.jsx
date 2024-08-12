@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddCategory = ({setCategories}) => {
+//const AddCategory = ({setCategories}) => {
  
 
   const [inputValue, setInputValue] = useState("One Punch");
