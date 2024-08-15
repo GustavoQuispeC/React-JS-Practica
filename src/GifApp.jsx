@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddCategory from "./components/AddCategory";
+import GifGrid from "./components/GifGrid";
 
 const GifApp = () => {
   const [categories, setCategories] = useState([
@@ -9,6 +10,7 @@ const GifApp = () => {
   ]);
 
   const onAddCategory = (newCategory) => {
+    if (categories.includes(newCategory)) return;
     setCategories([newCategory, ...categories]);
   };
 
@@ -17,15 +19,11 @@ const GifApp = () => {
       <h1>GifAPP</h1>
 
       <AddCategory
-        //setCategories={setCategories}
-        onNewCategory={onAddCategory}
+        onNewCategory={onAddCategory} // vincula el evento onNewCategory con la función onAddCategory
       />
-
-      <ol>
-        {categories.map((x) => {
-          return <li key={x}>{x}</li>;
-        })}
-      </ol>
+      {categories.map((category) => (
+        <GifGrid key={category} category={category} />
+      ))}
     </>
   );
 };
