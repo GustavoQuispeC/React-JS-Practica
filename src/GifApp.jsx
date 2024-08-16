@@ -4,9 +4,7 @@ import GifGrid from "./components/GifGrid";
 
 const GifApp = () => {
   const [categories, setCategories] = useState([
-    "One Punch",
-    "Dragon Ball",
-    "Dragon Ball Z",
+    "One Punch"
   ]);
 
   const onAddCategory = (newCategory) => {
